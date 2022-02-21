@@ -1,3 +1,4 @@
 [build]
   publish = "dist"
+  CI ='npm run envjs'
   CI='npm run build'

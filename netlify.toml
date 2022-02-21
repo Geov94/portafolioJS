@@ -1,4 +1,4 @@
 [build]
   publish = "dist"
-  CI= " npm run build
+  Command= " npm run build
 

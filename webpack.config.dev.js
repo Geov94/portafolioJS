@@ -2,7 +2,7 @@ const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const copyPlugin = require('copy-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
+// const Dotenv = require('dotenv-webpack');
 
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
             '@utils': path.resolve(__dirname,'src/utils/'),
             '@templates': path.resolve(__dirname,'src/templates/'),
             '@styles': path.resolve(__dirname,'src/styles/'),
-            '@images': path.resolve(__dirname,'src/images/'),
+            '@images': path.resolve(__dirname,'src/assets/images/'),
         }
     },
     module:{
@@ -79,7 +79,9 @@ module.exports = {
             ]
 
         }),
-        new Dotenv(),
+        // new Dotenv({
+        //     path: path.resolve(__dirname, '.env')
+        //   }),
     ] ,
    
 }

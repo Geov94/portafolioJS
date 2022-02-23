@@ -5,6 +5,7 @@ const copyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 
+
 module.exports = {
     entry:  './src/index.js',
     output: {
@@ -12,8 +13,7 @@ module.exports = {
         filename: '[name].[contenhash].js', 
         assetModuleFilename: 'assets/images/[hash][ext][query]'
     },
-    mode:'development',
-    watch: true,
+    mode:'development',   
     resolve:{
         extensions:['.js'],
         alias:{
@@ -81,5 +81,17 @@ module.exports = {
         }),
         new Dotenv(),
     ] ,
+     devServer :{
+         static:{ 
+             directory:path.join(__dirname,'dist'),
+             watch:true,
+            },
+            watchFiles: path.join(__dirname, "./**"),  
+            historyApiFallback: true,    
+         compress:true,
+         open:true,
+         port:9000,
+
+     }
    
 }
